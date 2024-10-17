@@ -13,12 +13,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      SPRING_APPLICATION_NAME: ${{ secrets.SPRING_APPLICATION_NAME }}
-      SPRING_DATASOURCE_URL: ${{ secrets.SPRING_DATASOURCE_URL }}
-      SPRING_DATASOURCE_USERNAME: ${{ secrets.SPRING_DATASOURCE_USERNAME }}
-      SPRING_DATASOURCE_PASSWORD: ${{ secrets.SPRING_DATASOURCE_PASSWORD }}
-
     steps:
       - uses: actions/checkout@v4
 
@@ -66,4 +60,9 @@ jobs:
           app-name: 'medical-appointment-api'
           slot-name: 'Production'
           package: '*.jar'
+          app-settings: |
+            SPRING_APPLICATION_NAME=Medical Appointment Chatbot API
+            SPRING_DATASOURCE_URL=${{ secrets.SPRING_DATASOURCE_URL }}
+            SPRING_DATASOURCE_USERNAME=${{ secrets.SPRING_DATASOURCE_USERNAME }}
+            SPRING_DATASOURCE_PASSWORD=${{ secrets.SPRING_DATASOURCE_PASSWORD }}
           
