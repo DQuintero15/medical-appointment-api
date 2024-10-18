@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'temurin'
+          distribution: 'temurin'  # o 'adopt'
 
       - name: Build with Maven
         env:
@@ -29,11 +29,14 @@ jobs:
           SPRING_DATASOURCE_PASSWORD: ${{ secrets.SPRING_DATASOURCE_PASSWORD }}
         run: mvn clean install
 
+      - name: List target directory
+        run: ls -la target 
+
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
           name: spring-boot-app
-          path: target/*.jar
+          path: target/*.jar 
 
   deploy:
     runs-on: ubuntu-latest
@@ -51,5 +54,4 @@ jobs:
           azure-subscription: ${{ secrets.AZURE_SUBSCRIPTION }}
           service-name: ${{ secrets.AZURE_SPRING_APPS_NAME }}
           app-name: medical-appointment-api
-          package: target\medical-appointment-api-0.0.1-SNAPSHOT.jar
-          action: deploy
+          package: target/*.jar
