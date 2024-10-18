@@ -30,13 +30,13 @@ jobs:
         run: mvn clean install
 
       - name: List target directory
-        run: ls -la target 
+        run: ls -la target  # Listar archivos generados
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
           name: spring-boot-app
-          path: target/*.jar 
+          path: target/medical-appointment-api-0.0.1-SNAPSHOT.jar  # Actualiza este patrón
 
   deploy:
     runs-on: ubuntu-latest
@@ -54,4 +54,4 @@ jobs:
           azure-subscription: ${{ secrets.AZURE_SUBSCRIPTION }}
           service-name: ${{ secrets.AZURE_SPRING_APPS_NAME }}
           app-name: medical-appointment-api
-          package: target/*.jar
+          package: target/medical-appointment-api-0.0.1-SNAPSHOT.jar  # Actualiza este nombre
