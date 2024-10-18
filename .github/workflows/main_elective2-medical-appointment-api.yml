@@ -57,4 +57,4 @@ jobs:
           azure-subscription: ${{ secrets.AZURE_SUBSCRIPTION }}
           service-name: ${{ secrets.AZURE_SPRING_APPS_NAME }}
           app-name: medical-appointment-api
-          package: ./target/medical-appointment-api-0.0.1-SNAPSHOT.jar  # Actualiza este nombre
+          package: ${{ github.workspace }}/target/medical-appointment-api-0.0.1-SNAPSHOT.jar
