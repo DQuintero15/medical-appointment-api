@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'temurin'
+          distribution: 'temurin'  # o 'adopt'
 
       - name: Build with Maven
         env:
@@ -49,7 +49,7 @@ jobs:
         uses: azure/spring-apps-deploy@v1
         with:
           azure-subscription: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resource-group: ${{ secrets.AZURE_RESOURCE_GROUP }}
           service-name: ${{ secrets.AZURE_SPRING_APPS_NAME }}
           app-name: medical-appointment-api
           package: target/*.jar
+          action: deploy
