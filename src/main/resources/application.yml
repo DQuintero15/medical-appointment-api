@@ -2,9 +2,9 @@ spring:
   application:
     name: medical-appointment-api
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
-    username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
+    url: jdbc:sqlserver://elective2.database.windows.net:1433;databaseName=elective2-db;
+    username: admin-elective2
+    password: NKxfnD8X6ThBcm9gkyXwaXyjk4TzTTh8vThs58NecyFiBMxUC8vxDQGBT9ovM66Yx04TTguyQAryqAiG
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa:
     hibernate:
