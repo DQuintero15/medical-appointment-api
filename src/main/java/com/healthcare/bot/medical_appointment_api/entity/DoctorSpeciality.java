@@ -31,11 +31,9 @@ public class DoctorSpeciality {
     @JoinColumn(name = "speciality_id", nullable = false)
     private Speciality speciality;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @Column(name = "updated_at", nullable = false)
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 }

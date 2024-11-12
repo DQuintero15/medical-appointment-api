@@ -29,11 +29,9 @@ public class Speciality {
     @Column(name = "description", nullable = false)
     private String description;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @Column(name = "updated_at", nullable = false)
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 }

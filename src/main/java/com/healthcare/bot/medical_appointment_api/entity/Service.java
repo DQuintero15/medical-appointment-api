@@ -29,14 +29,12 @@ public class Service {
     @Column(name = "description", nullable = false)
     private String description;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
     @CreationTimestamp
     private LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "service")
     private List<Appointment> appointments;
 
-    @Column(name = "updated_at", nullable = false)
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 }
