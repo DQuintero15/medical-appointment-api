@@ -13,7 +13,12 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.SQLServerDialect
-
+  rabbitmq:
+    host: turkey.rmq.cloudamqp.com
+    port: 5672
+    username: ridedrgu
+    password: kxH3ImlGe6ad3PzY5GQYN3lFKnzakBA6
+    virtual-host: ridedrgu
 server:
   servlet:
     context-path: /api
