@@ -50,14 +50,15 @@ public class Patient {
     @Column(name = "confirm_data_policy", nullable = false)
     private boolean confirmDataPolicy;
 
+    @Column(name = "confirm_terms_conditions_date")
+    private LocalDate confirmTermsConditionsDate;
+
     @OneToMany(mappedBy = "patient")
     private List<Appointment> appointments;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @Column(name = "updated_at", nullable = false)
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 }
