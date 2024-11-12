@@ -21,4 +21,9 @@ public class PatientController {
         }
         return new ResponseEntity<>(patient, HttpStatus.OK);
     }
+
+    @GetMapping("/data-policy/{phoneNumber}")
+    public ResponseEntity<Boolean> isPatientDataPolicyConfirmed(@PathVariable String phoneNumber) {
+        return new ResponseEntity<>(patientService.isPatientDataPolicyConfirmed(phoneNumber), HttpStatus.OK);
+    }
 }
