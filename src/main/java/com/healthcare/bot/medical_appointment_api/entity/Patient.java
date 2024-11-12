@@ -12,11 +12,9 @@ import java.util.List;
 
 @Entity
 @Table(name = "patients")
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 public class Patient {
 
     @Id
