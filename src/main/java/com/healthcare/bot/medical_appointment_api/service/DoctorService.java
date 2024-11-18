@@ -22,4 +22,5 @@ public class DoctorService {
     private SpecialityRepository specialityRepository;
     private DoctorSpecialityService doctorSpecialityService;
 
+
 }
