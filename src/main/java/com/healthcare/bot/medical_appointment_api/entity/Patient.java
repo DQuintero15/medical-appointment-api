@@ -1,5 +1,6 @@
 package com.healthcare.bot.medical_appointment_api.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.healthcare.bot.medical_appointment_api.shared.enums.Identificationtype;
 import jakarta.persistence.*;
 import lombok.*;
@@ -52,6 +53,7 @@ public class Patient {
     private LocalDate confirmTermsConditionsDate;
 
     @OneToMany(mappedBy = "patient")
+    @JsonIgnore
     private List<Appointment> appointments;
 
     @CreationTimestamp

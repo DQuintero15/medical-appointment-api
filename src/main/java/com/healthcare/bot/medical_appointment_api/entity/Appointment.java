@@ -1,5 +1,6 @@
 package com.healthcare.bot.medical_appointment_api.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.healthcare.bot.medical_appointment_api.shared.enums.AppointmentStatus;
 import jakarta.persistence.*;
 import lombok.*;
@@ -29,6 +30,7 @@ public class Appointment {
 
     @ManyToOne
     @JoinColumn(name = "patient_id", nullable = false)
+    @JsonIgnore
     private Patient patient;
 
     @ManyToOne
@@ -37,6 +39,7 @@ public class Appointment {
 
     @ManyToOne
     @JoinColumn(name = "schedule_id", nullable = false)
+    @JsonIgnore
     private Schedules schedule;
 
     @Column(name = "appointment_time", nullable = false)

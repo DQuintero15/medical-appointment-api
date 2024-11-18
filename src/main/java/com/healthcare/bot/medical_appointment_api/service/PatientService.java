@@ -30,4 +30,7 @@ public class PatientService {
         return patient != null && patient.isConfirmDataPolicy();
     }
 
+    public Patient getPatientByPhoneNumber(String phoneNumber) {
+        return patientRepository.findByPhoneNumber(phoneNumber).orElse(null);
+    }
 }

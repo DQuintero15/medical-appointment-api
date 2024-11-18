@@ -1,5 +1,6 @@
 package com.healthcare.bot.medical_appointment_api.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
@@ -27,6 +28,7 @@ public class Schedules {
 
     @ManyToOne
     @JoinColumn(name = "doctor_id", nullable = false)
+    @JsonIgnore
     private Doctor doctor;
 
     @Column(nullable = false)
